@@ -1,1 +1,7 @@
 *.webp filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.png filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.exr filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.blend filter=lfs diff=lfs merge=lfs -text
+Casa/**/*.spp filter=lfs diff=lfs merge=lfs -text

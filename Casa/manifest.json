@@ -1,0 +1,990 @@
+{
+  "project": "CASA",
+  "created_utc": "2026-10-24T03:43:33Z",
+  "files": [
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\1.png",
+      "saved": "Proyecto/Casa/1.png",
+      "bytes": 8821501,
+      "sha256": "eb0b0aaf1e07191bcf00e753f452cd0eec02a7856e7e6440e837a2dfbd6e7e1e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\2.png",
+      "saved": "Proyecto/Casa/2.png",
+      "bytes": 2369885,
+      "sha256": "17114027eb3a38fe4a36368921bea09bebf6d367340cca4363d7045b1a426208",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\3.png",
+      "saved": "Proyecto/Casa/3.png",
+      "bytes": 1600040,
+      "sha256": "bc9eda949e7b6d218a49714fb8e190d719c89e00e2827e3563733988742c307a",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\4.png",
+      "saved": "Proyecto/Casa/4.png",
+      "bytes": 1892824,
+      "sha256": "836676d68549e01c3c46d3e31bf92669d07371fe6c6210ec101dd81def8cb2e6",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_Alpha.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_Alpha.png",
+      "bytes": 5356,
+      "sha256": "e2f667992b59b80884a171d2011f9279c22a65ccaaa485f888b6a5933141d03c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_BaseColor.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_BaseColor.png",
+      "bytes": 40151,
+      "sha256": "6fd6bad11b1992c0454880a781246129aef029e56aaffef0928b1a26a7a29a22",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_Displacement.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_Displacement.png",
+      "bytes": 5356,
+      "sha256": "87e91633aef71e213cb90eec82065809437d43a67a93e15c9a613aa790c70b5f",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_Emission.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_Emission.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_Metallic.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_Metallic.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\DefaultMaterial_Roughness.png",
+      "saved": "Proyecto/Casa/Albol/DefaultMaterial_Roughness.png",
+      "bytes": 31962,
+      "sha256": "4cc394905ddab80ed1048a862f1d9c07608127171eaf85a1d4b8afc4fbbc4767",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\montaña2_AlbedoTransparency.png",
+      "saved": "Proyecto/Casa/Albol/montaña2_AlbedoTransparency.png",
+      "bytes": 275487,
+      "sha256": "e59505115d9e4c43cb7d3899b3ec5d4fe10b281bf8b8620d45a1e8eda79b602e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\montaña2_MetallicSmoothness.png",
+      "saved": "Proyecto/Casa/Albol/montaña2_MetallicSmoothness.png",
+      "bytes": 4165,
+      "sha256": "ff37887ac13e46660f1c5540253c2b745559c91ed0270daac72360d0d885a2db",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\montaña2_Normal.png",
+      "saved": "Proyecto/Casa/Albol/montaña2_Normal.png",
+      "bytes": 22066,
+      "sha256": "2785ced99cd5a33756060e29750c66df32e4ee6de029d9c2ecc11adc907aad54",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Montaña_AlbedoTransparency.png",
+      "saved": "Proyecto/Casa/Albol/Montaña_AlbedoTransparency.png",
+      "bytes": 729220,
+      "sha256": "a444a71e123de168e1aed7abf88526ac51fa40c7c0f22a1e03fe6b4052826838",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Montaña_MetallicSmoothness.png",
+      "saved": "Proyecto/Casa/Albol/Montaña_MetallicSmoothness.png",
+      "bytes": 4165,
+      "sha256": "ff37887ac13e46660f1c5540253c2b745559c91ed0270daac72360d0d885a2db",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Montaña_Normal.png",
+      "saved": "Proyecto/Casa/Albol/Montaña_Normal.png",
+      "bytes": 201847,
+      "sha256": "f8059bfbb70dd7b3d0603b6d822bf98cfecd32295ef78168f07fffc77d81afc1",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino2_AlbedoTransparency.png",
+      "saved": "Proyecto/Casa/Albol/Pino2_AlbedoTransparency.png",
+      "bytes": 10628,
+      "sha256": "61407b1cb90df6ab560d2c86c7d7de27ea4ecd59dc95101e81e77dd900bd5541",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino2_MetallicSmoothness.png",
+      "saved": "Proyecto/Casa/Albol/Pino2_MetallicSmoothness.png",
+      "bytes": 4165,
+      "sha256": "ff37887ac13e46660f1c5540253c2b745559c91ed0270daac72360d0d885a2db",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino2_Normal.png",
+      "saved": "Proyecto/Casa/Albol/Pino2_Normal.png",
+      "bytes": 954045,
+      "sha256": "a0a886b033bc69bc6dda34434511185280169d33285b4c39634b74df32551346",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino_AlbedoTransparency.png",
+      "saved": "Proyecto/Casa/Albol/Pino_AlbedoTransparency.png",
+      "bytes": 10468,
+      "sha256": "a84ef70729805a7ef62280c36d59e88bed3991cffa9fcb1620b94fc727c07eb6",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino_MetallicSmoothness.png",
+      "saved": "Proyecto/Casa/Albol/Pino_MetallicSmoothness.png",
+      "bytes": 4165,
+      "sha256": "ff37887ac13e46660f1c5540253c2b745559c91ed0270daac72360d0d885a2db",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Albol\\Pino_Normal.png",
+      "saved": "Proyecto/Casa/Albol/Pino_Normal.png",
+      "bytes": 954045,
+      "sha256": "a0a886b033bc69bc6dda34434511185280169d33285b4c39634b74df32551346",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Arbol.fbx",
+      "saved": "Proyecto/Casa/Arbol.fbx",
+      "bytes": 12812,
+      "sha256": "6e4fb5a23d3c0ded91030a2053d0361d0bbac7b4b9b4a2c03f9bf0889519edba",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Alpha.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Alpha.png",
+      "bytes": 5356,
+      "sha256": "e2f667992b59b80884a171d2011f9279c22a65ccaaa485f888b6a5933141d03c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_BaseColor.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_BaseColor.png",
+      "bytes": 983367,
+      "sha256": "4b83dbdadcf154d60c3b4c95e6bf8ccc278c1b470ea0aed3790e3357a97c55be",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Displacement.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Displacement.png",
+      "bytes": 19963,
+      "sha256": "1f280a5a75f99a9f97980452ecc7e64688316eca5d8d3b24b2d8fb511b670882",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Emission.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Emission.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Metallic.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Metallic.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Normal.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Normal.png",
+      "bytes": 41930,
+      "sha256": "907e4ab4960cd5252cd2318616906caf7c492f15e3e1f5751fc239eb14a8358f",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton 5\\DefaultMaterial_Roughness.png",
+      "saved": "Proyecto/Casa/casa carton 5/DefaultMaterial_Roughness.png",
+      "bytes": 22318,
+      "sha256": "31e5d4c99d32c8c0f907138f229c62213a30c93f2e4c1baa7d8687867c170af3",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Alpha.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Alpha.png",
+      "bytes": 5356,
+      "sha256": "e2f667992b59b80884a171d2011f9279c22a65ccaaa485f888b6a5933141d03c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_BaseColor.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_BaseColor.png",
+      "bytes": 417781,
+      "sha256": "ca75785fd090ef96662b03ed64b0aaa190fd5629438b8d7968719bc9e36eaaee",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Displacement.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Displacement.png",
+      "bytes": 77606,
+      "sha256": "0cf1939ba8f327b85f6001f21cfcb9d6b472e18e807c4e2af9b51452e23db21b",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Emission.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Emission.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Metallic.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Metallic.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Normal.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Normal.png",
+      "bytes": 410910,
+      "sha256": "42fb7869f6f895d31ca9179ea6d952b3d5def1ed609408a0299892fc7556ca91",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa carton1\\DefaultMaterial_Roughness.png",
+      "saved": "Proyecto/Casa/casa carton1/DefaultMaterial_Roughness.png",
+      "bytes": 125324,
+      "sha256": "9f43f1889f450bd7cd94fd657774a5982379eceacb2b6294ceb3bf27edeb1a75",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa.blend",
+      "saved": "Proyecto/Casa/Casa.blend",
+      "bytes": 16688315,
+      "sha256": "20825b2ebd5e383ba1423bfb2e7843dc8a114d62a9dc6a12662f47152d8f10e2",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\casa.spp",
+      "saved": "Proyecto/Casa/casa.spp",
+      "bytes": 463944102,
+      "sha256": "f472f7f1a396254e4bad99646119538ce5592287b0b8e570e4164c0105159612",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Alpha.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Alpha.png",
+      "bytes": 5356,
+      "sha256": "e2f667992b59b80884a171d2011f9279c22a65ccaaa485f888b6a5933141d03c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_BaseColor.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_BaseColor.png",
+      "bytes": 876488,
+      "sha256": "ddead2576d7aff3c6a12c2cc341d2f9aaf548dd67d25ab05ba7ac9b7c5906c15",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Displacement.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Displacement.png",
+      "bytes": 6007,
+      "sha256": "cfaf1eb8de5590e044ee7b4864a206bb1d082528bfdbb50832986921a65dee46",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Emission.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Emission.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Metallic.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Metallic.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Normal.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Normal.png",
+      "bytes": 46583,
+      "sha256": "d59bd1d68507755f5de48a1aff23759a8c569a45b375b52c0e9e5111ab96cfc3",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casa3\\DefaultMaterial_Roughness.png",
+      "saved": "Proyecto/Casa/Casa3/DefaultMaterial_Roughness.png",
+      "bytes": 6010,
+      "sha256": "954e4a3ef9b8df86ceb94b8840c29cf261d06b26f45489b66b44ec29896e0f0e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Casas_y_paisaje_reconstruido.blend",
+      "saved": "Proyecto/Casa/Casas_y_paisaje_reconstruido.blend",
+      "bytes": 78537140,
+      "sha256": "61ec16ead8789fc8258747b7cb02b84509db67ef9fd96286e03bbcd70c04c4d5",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\montañas.fbx",
+      "saved": "Proyecto/Casa/montañas.fbx",
+      "bytes": 392540,
+      "sha256": "44387a4f550b3e93bf0c9c5fa56e0bd96d9478437f150a9ab69eb3de5beb410c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\01_Blockout_Idea.png",
+      "saved": "Proyecto/Casa/protafolio/01_Blockout_Idea.png",
+      "bytes": 3933914,
+      "sha256": "8267be35b28fc322c31c9852159697306ea63803f6c7fbc69407467014c2442e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\02_Blockout_Encuadre_Blender.png",
+      "saved": "Proyecto/Casa/protafolio/02_Blockout_Encuadre_Blender.png",
+      "bytes": 1719839,
+      "sha256": "6eb104849f063e479a3893fda8ac86b5084ef05e42e3e139569cb493dff1df65",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\03_Refinamiento_01_Encuadre_Actual.png",
+      "saved": "Proyecto/Casa/protafolio/03_Refinamiento_01_Encuadre_Actual.png",
+      "bytes": 3670898,
+      "sha256": "60e735e5706ff408a39c1df0fe3b54401707217c979e20b4d776bfacf57ef1dc",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\03_Refinamiento_02_Vista_General.png",
+      "saved": "Proyecto/Casa/protafolio/03_Refinamiento_02_Vista_General.png",
+      "bytes": 3235517,
+      "sha256": "28cf99fa8fa88cd10bab56c48bef5b5860bee98adc32a605c9b85a24ca0b2348",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\04_Final_01_Vista_Principal.png",
+      "saved": "Proyecto/Casa/protafolio/04_Final_01_Vista_Principal.png",
+      "bytes": 3384466,
+      "sha256": "4c473a0f7566e76f8de3730d2ea94832e407347bf5a5cc21e54f7e34aa8c42be",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\04_Final_02_Lado_Opuesto.png",
+      "saved": "Proyecto/Casa/protafolio/04_Final_02_Lado_Opuesto.png",
+      "bytes": 3288416,
+      "sha256": "a083781e414eb91ce3d93c2237612634771df4f66b710f0de630556015ae35a1",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\04_Final_03_Panoramica.png",
+      "saved": "Proyecto/Casa/protafolio/04_Final_03_Panoramica.png",
+      "bytes": 2757602,
+      "sha256": "94b12024d95bc26e37831851f2142b581bd70afbee63f57c00b707c95499bd92",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\06_Despiece_Modular.png",
+      "saved": "Proyecto/Casa/protafolio/06_Despiece_Modular.png",
+      "bytes": 3212155,
+      "sha256": "bed899c5923a01ac41e9b46446bd52102a6bcac543c41b2a27658e9d9df70595",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\08_Materials.png",
+      "saved": "Proyecto/Casa/protafolio/08_Materials.png",
+      "bytes": 5623756,
+      "sha256": "41fdb1b3c27ad2c5d536370382a4fb294d119234b90325f959a10a8999c649d8",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\09_Iluminacion\\01_Base_Lighting_Clay.png",
+      "saved": "Proyecto/Casa/protafolio/09_Iluminacion/01_Base_Lighting_Clay.png",
+      "bytes": 2931165,
+      "sha256": "83454ab29f4fe7591aee36be8ca3a3ecebd8bf4049c29118082bc4f62458e6ca",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\09_Iluminacion\\02_Key_Light.png",
+      "saved": "Proyecto/Casa/protafolio/09_Iluminacion/02_Key_Light.png",
+      "bytes": 3774782,
+      "sha256": "18600bbc049bb67dbb2cad76653f33abcc715d5a49e7b57acb6d573be4e4be57",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\09_Iluminacion\\03_Fill_Light.png",
+      "saved": "Proyecto/Casa/protafolio/09_Iluminacion/03_Fill_Light.png",
+      "bytes": 3840836,
+      "sha256": "ade3c77335f7ee18463d4474532ebd99b07bf1fed199563e831c88acbdaa779f",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\09_Iluminacion\\04_Final_Result.png",
+      "saved": "Proyecto/Casa/protafolio/09_Iluminacion/04_Final_Result.png",
+      "bytes": 3855758,
+      "sha256": "7fb54fb9450df3febe46f5cb65314ea8e94302f86e23ba16b1dc20e1a006354d",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\09_Iluminacion\\09_Lighting_Breakdown.png",
+      "saved": "Proyecto/Casa/protafolio/09_Iluminacion/09_Lighting_Breakdown.png",
+      "bytes": 2745079,
+      "sha256": "45935f9a03238374a8a5402a0bbdbb753b8267eb29fb1a95eccc68a785088762",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\01_Lace_Window.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/01_Lace_Window.png",
+      "bytes": 707001,
+      "sha256": "fee193e592f41862e6ba5e2d92d5370b899846527d0b995f93221f012dfc933e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\02_Corrugated_Edge.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/02_Corrugated_Edge.png",
+      "bytes": 589398,
+      "sha256": "3926e8b5592f3fc63278d22d8b3afc164b031f2a6b78408aea86c4567d427a47",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\03_Balcony_Railing.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/03_Balcony_Railing.png",
+      "bytes": 743118,
+      "sha256": "5ed916f65b2c8636af6763d1fbaab66eba6250add7576240c3a39313ad5d5458",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\04_Shopfront_Details.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/04_Shopfront_Details.png",
+      "bytes": 674402,
+      "sha256": "9af54aaf9b3f6db2fc73350b066838b063eaba53ac5139c6ad175951597f43cb",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\05_Cut_Paper_Fern.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/05_Cut_Paper_Fern.png",
+      "bytes": 727949,
+      "sha256": "2f8cea453a114592d6ba6f44555562a6fd8628c11c13406e5c71d40d2791abdf",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\06_Waterfall_Paper_Edges.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/06_Waterfall_Paper_Edges.png",
+      "bytes": 657835,
+      "sha256": "647e86c748b146110f8697e2617faa2418451e66e57e5b9b42a6800565b49d2e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\07_Wheel_Paper_Edges.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/07_Wheel_Paper_Edges.png",
+      "bytes": 696626,
+      "sha256": "3340dd83cd5d3044cfb4e5a716a91f2286bdffa2dd52a8d0ab1bc969a4007891",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\10_Detalles_Entorno_Serie_02\\10_Close_Up_Details_Series_02.png",
+      "saved": "Proyecto/Casa/protafolio/10_Detalles_Entorno_Serie_02/10_Close_Up_Details_Series_02.png",
+      "bytes": 4312729,
+      "sha256": "2663e226ca48023ba5207c1d4bc1e35f9422964d8fc5a0065c14324acd97accc",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\2.png",
+      "saved": "Proyecto/Casa/protafolio/2.png",
+      "bytes": 2369885,
+      "sha256": "17114027eb3a38fe4a36368921bea09bebf6d367340cca4363d7045b1a426208",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Antes.png",
+      "saved": "Proyecto/Casa/protafolio/Antes.png",
+      "bytes": 10954001,
+      "sha256": "33d292ce676098ed54945895262e44c8718ddcd02471fdfd33f0189cf5e9c038",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Casa original.blend",
+      "saved": "Proyecto/Casa/protafolio/Casa original.blend",
+      "bytes": 78494283,
+      "sha256": "96eb2a7d0e5e252f2c4938435750aa27af34aceca78eca793f57f27c40e6f66b",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\detalle1.png",
+      "saved": "Proyecto/Casa/protafolio/detalle1.png",
+      "bytes": 2185318,
+      "sha256": "345c4e746fcce2a0f45fc1f36fd0f830e3b9b7e58f9ac6a042d911271690789c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\detalle2.png",
+      "saved": "Proyecto/Casa/protafolio/detalle2.png",
+      "bytes": 2234782,
+      "sha256": "2a2017083872228fc1e5404194dc0444b80f04e8c24b1b12cfceee7c1cb7a8f7",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\detalle3.png",
+      "saved": "Proyecto/Casa/protafolio/detalle3.png",
+      "bytes": 2027289,
+      "sha256": "1fe4cc52a4f634ea9bb5ffe84b39b6a91d9fc50ea7be8bdcaee2d37ca18b2687",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\detalle4.png",
+      "saved": "Proyecto/Casa/protafolio/detalle4.png",
+      "bytes": 2053846,
+      "sha256": "5566cc7183ad598937b65784fa57fdc7fdc4be2e86a69474ca47b8e4c06ac45b",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Principal.png",
+      "saved": "Proyecto/Casa/protafolio/Principal.png",
+      "bytes": 3400349,
+      "sha256": "45009259fc513f1ae063ea26efaf847bf2e8cb5ecd0ae8f1199d9802b4ac694e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Wireframe.png",
+      "saved": "Proyecto/Casa/protafolio/Wireframe.png",
+      "bytes": 8253824,
+      "sha256": "84745a8ff3c754ce25b374bb5f228d8e56d35450c6270cfe18af283df040deb7",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Wireframe2.png",
+      "saved": "Proyecto/Casa/protafolio/Wireframe2.png",
+      "bytes": 8293335,
+      "sha256": "277d2c2e4bb525912a8d943c9a05a124472c6e04c9877f15304b501c6824da88",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Wireframe3.png",
+      "saved": "Proyecto/Casa/protafolio/Wireframe3.png",
+      "bytes": 8364799,
+      "sha256": "d79209ce7be0c55dacdda57e3c404ec27782997f6aa667975d5af60202999b70",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Wireframe4 original.png",
+      "saved": "Proyecto/Casa/protafolio/Wireframe4 original.png",
+      "bytes": 7423766,
+      "sha256": "f6e662290dbd26cd6ff70be8793405d56bbca48b124ad066044638d414df1d28",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Alpha.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Alpha.png",
+      "bytes": 5356,
+      "sha256": "e2f667992b59b80884a171d2011f9279c22a65ccaaa485f888b6a5933141d03c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_BaseColor.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_BaseColor.png",
+      "bytes": 778790,
+      "sha256": "67f332ff8db6b98e75628e534560f332fecae55361c84f9226cd7819816e2720",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Displacement.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Displacement.png",
+      "bytes": 33264,
+      "sha256": "c6409b2398bfeae735666ebb33846e8529fdfd3abf451abe71ce4d1202adbcdf",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Emission.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Emission.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Metallic.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Metallic.png",
+      "bytes": 3150,
+      "sha256": "55304dc7e2d48c5aca2b8c7bab9c2318a256dee8888f1279fd8627b01e29a825",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Normal.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Normal.png",
+      "bytes": 65605,
+      "sha256": "e98eb69890ab9078c39847d57c8ed1d53b3f99bd31f53fc50151a21a89cfd65c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Textura Carton\\DefaultMaterial_Roughness.png",
+      "saved": "Proyecto/Casa/Textura Carton/DefaultMaterial_Roughness.png",
+      "bytes": 34894,
+      "sha256": "08809d6969856ad4501a01b0056979a318dae70591cce462143c7beeaf78fadf",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Alpha.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Alpha.png",
+      "bytes": 218920,
+      "sha256": "b6463ddfd4eee1851078ca633d867e54b483d7289271c3b56ae42df508b89842",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_BaseColor.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_BaseColor.png",
+      "bytes": 1648891,
+      "sha256": "aba8185dd72819d1038b2858653bb48bc29c09cefd435be1e8d4534999f6c876",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Displacement.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Displacement.png",
+      "bytes": 661547,
+      "sha256": "55539ff613bb1004f1d9ad7021c6505f6121d14bb5535b55a4fce93bc2a21670",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Emission.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Emission.png",
+      "bytes": 12332,
+      "sha256": "766ed13d904fbae3073b78eb5acc7f332e174b1ffc207daf1b4ba6b22385c3fd",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Metallic.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Metallic.png",
+      "bytes": 16703,
+      "sha256": "63f3458eab76396e50224eff1eb014d0618777a90c4dba2204cb9d1ee9251e64",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Normal.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Normal.png",
+      "bytes": 2832365,
+      "sha256": "c4c01f67ba3f4d3e8f5e83f25ef6025137b442f1cb012a641a84cb530215a0ec",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\textura casa\\Casa_1_Roughness.png",
+      "saved": "Proyecto/Casa/textura casa/Casa_1_Roughness.png",
+      "bytes": 1324963,
+      "sha256": "9a5a40596f41a2b511e6a64e70a6fc3d204686330d344deb55e94d286fd72cbb",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Untitl22ed.png",
+      "saved": "Proyecto/Casa/Untitl22ed.png",
+      "bytes": 7818061,
+      "sha256": "e5fd6970a497aba6387a5b58f8f16ba1daac69b40d0628b27d2c89d426c21afa",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\Untitl52ed.png",
+      "saved": "Proyecto/Casa/Untitl52ed.png",
+      "bytes": 10954001,
+      "sha256": "33d292ce676098ed54945895262e44c8718ddcd02471fdfd33f0189cf5e9c038",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa\\protafolio\\Wireframe.blend1",
+      "saved": "Proyecto/Casa/protafolio/Wireframe.blend",
+      "bytes": 68988986,
+      "sha256": "3b59fc55935582d18cefb19afb4e692d51073ffa7445f9f748a9389b46982dab",
+      "reason": "recovered from existing .blend1; byte-for-byte copy"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\download (2).jpg",
+      "saved": "Proyecto/casa texturas/download (2).jpg",
+      "bytes": 1128353,
+      "sha256": "92c90f14a341339ce0b4a5b77276600d4b4fcd05af1bae645a1eb608380b302f",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo lateral.jpg",
+      "saved": "Proyecto/casa texturas/ladrillo lateral.jpg",
+      "bytes": 234910,
+      "sha256": "e7ccb6676e91f3ce5d4a7538560297db3ec68849dacbe5a148dd496658ad193d",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo lateral_specular (2).png",
+      "saved": "Proyecto/casa texturas/ladrillo lateral_specular (2).png",
+      "bytes": 53639,
+      "sha256": "ee276402e9a66368c43568639d5badf11fabd3057d21184b75a301196a2a2ba9",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo lateral_specular.png",
+      "saved": "Proyecto/casa texturas/ladrillo lateral_specular.png",
+      "bytes": 115882,
+      "sha256": "2e3a95891ed602dd84b996b16eb7bc6d3503f0f8763fa6e388594ffbf0ca82fb",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo_Desplacement.png",
+      "saved": "Proyecto/casa texturas/ladrillo_Desplacement.png",
+      "bytes": 193502,
+      "sha256": "bebce96dbd11afb7c642ea4c27aae117e27328122d98d2f0ff8977a8d75af172",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo_Normal.png",
+      "saved": "Proyecto/casa texturas/ladrillo_Normal.png",
+      "bytes": 2138998,
+      "sha256": "93c0900efb12df290d77859a6f6ab766f20571c81e804c23ffa6a448dc850c5b",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo_OA.png",
+      "saved": "Proyecto/casa texturas/ladrillo_OA.png",
+      "bytes": 740262,
+      "sha256": "f0a01ca345ed6b11fb7ec54a4590ea0e2ffa809a49c63b4845d7c1d8440b1891",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\ladrillo_Specular.png",
+      "saved": "Proyecto/casa texturas/ladrillo_Specular.png",
+      "bytes": 883268,
+      "sha256": "17da183777c9e5a556da2af87f00853c5c3a4d63b6c7b26a2d826a5e962b3db4",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\michelmersh-hampshire-stock-downs-blend-stretcher-675-mm-architextures.jpg",
+      "saved": "Proyecto/casa texturas/michelmersh-hampshire-stock-downs-blend-stretcher-675-mm-architextures.jpg",
+      "bytes": 143558,
+      "sha256": "c7e8462f4828e8e053c82cf545e35dabb5cacc92a610863ade66652e391aebd5",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Pared verde_ambient.png",
+      "saved": "Proyecto/casa texturas/Pared verde_ambient.png",
+      "bytes": 772115,
+      "sha256": "d60678af038ee62ac935a46495082f32c151900e116da28a34aada3d26006731",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Pared verde_displacement.png",
+      "saved": "Proyecto/casa texturas/Pared verde_displacement.png",
+      "bytes": 805731,
+      "sha256": "b051e54a9843797b83ffd8f93e18e39d1423ada76c6ebdb8b9e2914d28fe8dec",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Pared verde_normal.png",
+      "saved": "Proyecto/casa texturas/Pared verde_normal.png",
+      "bytes": 3014955,
+      "sha256": "68b908f54ea206546937963b0ab237bb3b396cad1d2079a17522a61df6a945b2",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Pared verde_specular.png",
+      "saved": "Proyecto/casa texturas/Pared verde_specular.png",
+      "bytes": 1018353,
+      "sha256": "d57001868158535640021e301ebc7949cc683af69d8263cb093dbe43ee51d84a",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_anisotropy_rotation_4k.png",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_anisotropy_rotation_4k.png",
+      "bytes": 27127659,
+      "sha256": "c7bea1d8e24c1039a4b89dce26401169fa6689ccdedf0c9718b011e366ffaed7",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_ao_4k.jpg",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_ao_4k.jpg",
+      "bytes": 7498614,
+      "sha256": "c2611e952a8c2118e6ddf2ae7083f495c21822be5d2fe0978ae7db75de9e4ab5",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_arm_4k.jpg",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_arm_4k.jpg",
+      "bytes": 14546566,
+      "sha256": "32540dfd39e87123cb916a9420b2318550017429c06bb2952bf7c1027ffbd599",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_diff_4k.jpg",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_diff_4k.jpg",
+      "bytes": 8661746,
+      "sha256": "f04e6684bc76d5d0676a724ee84e7bcc2ebb84c334d8e37ca1f783e5e354a366",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_disp_4k.png",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_disp_4k.png",
+      "bytes": 21443859,
+      "sha256": "98638dbd38e3bec6c6ea2e13d1ff3a0bc1257335cc79f138046b3ced2f378ad6",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_metal_4k.exr",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_metal_4k.exr",
+      "bytes": 8308546,
+      "sha256": "d2c20313a638e2d7337cc3c57dea53589ca7dda039dfed4f1a4130a1fde4a6c1",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_nor_gl_4k.exr",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_nor_gl_4k.exr",
+      "bytes": 18487111,
+      "sha256": "77744e627d51f1ea309f48a74b770ae4859b8d041d9ef9af7d03b25dfeb70506",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\textures\\curly_teddy_checkered_rough_4k.exr",
+      "saved": "Proyecto/casa texturas/textures/curly_teddy_checkered_rough_4k.exr",
+      "bytes": 10908650,
+      "sha256": "ae81520881f3065c534651eb71468de29ef633d480ac86b6dba9499b8ab6632b",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\wall2.jpg",
+      "saved": "Proyecto/casa texturas/wall2.jpg",
+      "bytes": 97064,
+      "sha256": "ae2ca032dde4130196a4cbbf665e0cb8b3e9397408f34a99dcbc7fbe81d8a056",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\wall2_ambient.png",
+      "saved": "Proyecto/casa texturas/wall2_ambient.png",
+      "bytes": 642379,
+      "sha256": "f922d8f6834fa6458468887bf94bae537928b95a4b0f51c4fdfcadc74c0b85e3",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\wall2_displacement.png",
+      "saved": "Proyecto/casa texturas/wall2_displacement.png",
+      "bytes": 693938,
+      "sha256": "5fc837e37a316bb1cc35917f7d9098da95218cbeaaba7f278b876b9b121947a8",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\wall2_normal.png",
+      "saved": "Proyecto/casa texturas/wall2_normal.png",
+      "bytes": 2845287,
+      "sha256": "4265e91f4bf05087db8c6ebf4cd198e0d09536bf18d4442c958aa062633ea850",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\wall2_specular.png",
+      "saved": "Proyecto/casa texturas/wall2_specular.png",
+      "bytes": 919170,
+      "sha256": "32b05a9f2291d6575096bbb66012b08530196a9781c5559a7da7742e3fcd086c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Wall_desplazamiento.png",
+      "saved": "Proyecto/casa texturas/Wall_desplazamiento.png",
+      "bytes": 854125,
+      "sha256": "b389ffa0fd90ed1e8a83315c7bb616665ad62db312bb3c948ae20346ed9146b8",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Wall_Normal.png",
+      "saved": "Proyecto/casa texturas/Wall_Normal.png",
+      "bytes": 2690679,
+      "sha256": "e13b880c009acdde087c0f1bfa2d3960ca5d4014126eb8e864eb80b3b374a1d5",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Wall_oa.png",
+      "saved": "Proyecto/casa texturas/Wall_oa.png",
+      "bytes": 808377,
+      "sha256": "f630b84bc24ab148594cb690f9c80f60ff09c08ad3f088cacb20720c59005b31",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\casa texturas\\Wall_specular.png",
+      "saved": "Proyecto/casa texturas/Wall_specular.png",
+      "bytes": 1031151,
+      "sha256": "05eebfe35e697e5964a62acf42954fbf3e533ed326570b54c1bbd52ef9298d31",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Cardboard Ice Cream Shop Workflow Board.png",
+      "saved": "Proyecto/Cardboard Ice Cream Shop Workflow Board.png",
+      "bytes": 2313523,
+      "sha256": "f0800e5cbceb4b151ad303544155f7c9a48f6078617b44e1f4ea245675c1a3f1",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\carton.fbx",
+      "saved": "Proyecto/carton.fbx",
+      "bytes": 248828,
+      "sha256": "c6d7ba40ce864daded8b3eaf882510fe0dc1c3efbc8233fb747adac34dddd8f2",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Carton_corrugado.spp",
+      "saved": "Proyecto/Carton_corrugado.spp",
+      "bytes": 53186544,
+      "sha256": "4ba3ec25e5f33a4659b02ad93a4557e84096d1fab9ca1988d940022497134723",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Casa.fbx",
+      "saved": "Proyecto/Casa.fbx",
+      "bytes": 2148012,
+      "sha256": "3a118311cbb2e6fa23ee81f02846703e6d93577b63aa44c280e474838fb34ee2",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\corrugado.jpg",
+      "saved": "Proyecto/corrugado.jpg",
+      "bytes": 141654,
+      "sha256": "6f09191e3307d469767de0250f435e8ad5d9cfc456d4211685a7c60a5a8c233c",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\papel_Desplazamiento (1).png",
+      "saved": "Proyecto/papel_Desplazamiento (1).png",
+      "bytes": 230907,
+      "sha256": "aa6fc49a63cdc8081a6a419aae1fa433d42037dfe241df5c3294b8a491f54542",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\papel_Desplazamiento (2).png",
+      "saved": "Proyecto/papel_Desplazamiento (2).png",
+      "bytes": 472711,
+      "sha256": "7c3fdb1856f91ce9b2698a4f1f9b444616140d2dbb504c63749850173528136e",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\papel_Desplazamiento (3).png",
+      "saved": "Proyecto/papel_Desplazamiento (3).png",
+      "bytes": 1623629,
+      "sha256": "7b25f993a5ec0cad6670349143eb73ce63500fb287674606d4ecde8ba9164aae",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\papel_Desplazamiento.png",
+      "saved": "Proyecto/papel_Desplazamiento.png",
+      "bytes": 276979,
+      "sha256": "639cb4e521a2cfbb1a6dfe827d820f7f6bffd35f7060540668ad8a9987d82d11",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Users\\AA\\Downloads\\Textura de cartón enlosable perfecta _ Foto Premium.jpg",
+      "saved": "Proyecto/Textura de cartón enlosable perfecta _ Foto Premium.jpg",
+      "bytes": 53890,
+      "sha256": "060b9a73cd974a903e1ac923fd61d6558a045c5faa10a8e152401e0fdd218837",
+      "reason": "source"
+    },
+    {
+      "original": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\datafiles\\assets\\nodes\\geometry_nodes_essentials.blend",
+      "saved": "Dependencias/geometry_nodes_essentials.blend",
+      "bytes": 671957,
+      "sha256": "c9005d75ca18a2be66010fe7a8f825b30fda53202211aba10c7b21abd0c9927b",
+      "reason": "Blender built-in library referenced by source files"
+    }
+  ],
+  "previously_missing": [
+    "Casa/Albol/DefaultMaterial_Normal.png"
+  ],
+  "excluded": "Duplicate .blend1 backups, except the recovered Wireframe copy; unrelated Texturas projects."
+}
