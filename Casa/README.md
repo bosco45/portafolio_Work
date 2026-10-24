@@ -1,6 +1,6 @@
 # CASA - Respaldo del proyecto editable
 
-Este directorio conserva los archivos necesarios encontrados para continuar el proyecto de cartón. Los archivos originales de Descargas no se han movido ni modificado.
+Este directorio conserva los archivos necesarios encontrados para continuar el proyecto de cartón. El respaldo se preparó sin modificar los archivos de origen.
 
 ## Contenido
 
@@ -33,6 +33,6 @@ No se encontró Casa/Albol/DefaultMaterial_Normal.png (mapa normal del árbol). 
 
 ## Comprobación y conservación
 
-Cada archivo copiado se verificó contra el original con SHA-256. Los originales locales se conservan. Guarda también una copia independiente del directorio Proyecto en otro soporte si quieres protegerte además frente a la pérdida de acceso a tu cuenta.
+Cada archivo copiado se verificó contra el original con SHA-256. El usuario solicitó eliminar las copias locales de este proyecto y sus cachés únicamente después de completar la subida y verificar una descarga independiente de todos los objetos desde GitHub. El respaldo remoto se conserva.
 
 Documentación: [descargar archivos de Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage), [cuotas de Git LFS](https://docs.github.com/en/billing/concepts/product-billing/git-lfs).
