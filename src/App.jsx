@@ -15,6 +15,96 @@ const ImageLightbox = memo(({ images, currentIndex, onClose, onPrev, onNext, isM
   const [orientationClass, setOrientationClass] = useState('orientation-landscape')
   const prevIndexRef = useRef(currentIndex)
   const imageKeyRef = useRef(currentIndex)
+  const canvasRef = useRef(null)
+  const pointersRef = useRef(new Map())
+  const viewRef = useRef({ scale: 1, x: 0, y: 0 })
+  const [view, setView] = useState(viewRef.current)
+  const [dragging, setDragging] = useState(false)
+  const activeSource = images?.[currentIndex]?.src || ''
+  const isVideo = activeSource.endsWith('.mp4') || activeSource.endsWith('.webm')
+
+  const updateView = useCallback((next) => {
+    const canvas = canvasRef.current
+    const img = canvas?.querySelector('img')
+    const scale = Math.max(1, Math.min(5, next.scale))
+    let maxX = 0, maxY = 0
+    if (canvas && img?.naturalWidth) {
+      const { width, height } = canvas.getBoundingClientRect()
+      const ratio = img.naturalWidth / img.naturalHeight
+      maxX = Math.max(0, (Math.min(width, height * ratio) * scale - width) / 2)
+      maxY = Math.max(0, (Math.min(height, width / ratio) * scale - height) / 2)
+    }
+    const nextView = { scale, x: Math.max(-maxX, Math.min(maxX, next.x)), y: Math.max(-maxY, Math.min(maxY, next.y)) }
+    viewRef.current = nextView
+    setView(nextView)
+  }, [])
+
+  const zoomAt = useCallback((scale, clientX, clientY, dx = 0, dy = 0) => {
+    const rect = canvasRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const current = viewRef.current
+    const nextScale = Math.max(1, Math.min(5, scale))
+    const ratio = nextScale / current.scale
+    const x = clientX == null ? 0 : clientX - rect.left - rect.width / 2
+    const y = clientY == null ? 0 : clientY - rect.top - rect.height / 2
+    updateView({ scale: nextScale, x: x - (x - current.x) * ratio + dx, y: y - (y - current.y) * ratio + dy })
+  }, [updateView])
+
+  useEffect(() => {
+    pointersRef.current.clear()
+    updateView({ scale: 1, x: 0, y: 0 })
+    setDragging(false)
+  }, [currentIndex, activeSource, updateView])
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas || isVideo) return
+    const wheel = (event) => {
+      event.preventDefault()
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? canvas.clientHeight : 1)
+      zoomAt(viewRef.current.scale * Math.exp(-delta * 0.002), event.clientX, event.clientY)
+    }
+    const resize = () => updateView(viewRef.current)
+    canvas.addEventListener('wheel', wheel, { passive: false })
+    window.addEventListener('resize', resize)
+    return () => {
+      canvas.removeEventListener('wheel', wheel)
+      window.removeEventListener('resize', resize)
+    }
+  }, [isVideo, zoomAt, updateView])
+
+  const handlePointerDown = (event) => {
+    if (isVideo || event.button !== 0) return
+    pointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY })
+    event.currentTarget.setPointerCapture(event.pointerId)
+    setDragging(viewRef.current.scale > 1)
+  }
+
+  const handlePointerMove = (event) => {
+    const points = pointersRef.current
+    const previous = points.get(event.pointerId)
+    if (!previous) return
+    const before = [...points.values()]
+    points.set(event.pointerId, { x: event.clientX, y: event.clientY })
+    if (points.size >= 2) {
+      const after = [...points.values()]
+      const oldDistance = Math.hypot(before[0].x - before[1].x, before[0].y - before[1].y)
+      const distance = Math.hypot(after[0].x - after[1].x, after[0].y - after[1].y)
+      if (oldDistance > 0) {
+        const x = (before[0].x + before[1].x) / 2, y = (before[0].y + before[1].y) / 2
+        zoomAt(viewRef.current.scale * distance / oldDistance, x, y, (after[0].x + after[1].x) / 2 - x, (after[0].y + after[1].y) / 2 - y)
+      }
+    } else if (viewRef.current.scale > 1) {
+      updateView({ ...viewRef.current, x: viewRef.current.x + event.clientX - previous.x, y: viewRef.current.y + event.clientY - previous.y })
+    }
+    setDragging(viewRef.current.scale > 1)
+  }
+
+  const handlePointerEnd = (event) => {
+    pointersRef.current.delete(event.pointerId)
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
+    setDragging(pointersRef.current.size > 0 && viewRef.current.scale > 1)
+  }
   
   useEffect(() => {
     if (prevIndexRef.current !== currentIndex) {
@@ -62,13 +152,16 @@ const ImageLightbox = memo(({ images, currentIndex, onClose, onPrev, onNext, isM
   const getCanvasClassName = () => `lightbox-premium-canvas canvas-${orientationClass} canvas-mode-${mode}`
   const getImageClassName = () => `lightbox-premium-img img-${orientationClass} img-mode-${mode} ${transitioning ? 'img-transitioning' : ''} ${imageLoaded ? 'img-loaded' : ''}`
 
-  const isVideo = currentImage.src && (currentImage.src.endsWith('.mp4') || currentImage.src.endsWith('.webm'))
-
   return (
     <div className="lightbox-premium-container" onClick={onClose}>
       <div className="lightbox-premium-bg" />
       <div className="lightbox-premium-header">
         <span className="lightbox-premium-counter">{currentIndex + 1} / {images.length}</span>
+        {!isVideo && <div className="lightbox-premium-zoom-controls" onClick={(e) => e.stopPropagation()}>
+          <button type="button" aria-label="Zoom out" onClick={() => zoomAt(viewRef.current.scale / 1.25)} disabled={view.scale <= 1}>−</button>
+          <button type="button" aria-label="Reset zoom" onClick={() => updateView({ scale: 1, x: 0, y: 0 })}>{Math.round(view.scale * 100)}%</button>
+          <button type="button" aria-label="Zoom in" onClick={() => zoomAt(viewRef.current.scale * 1.25)} disabled={view.scale >= 5}>+</button>
+        </div>}
         <button className="lightbox-premium-close" style={{ border: "none", background: "transparent" }} onClick={(e) => { e.stopPropagation(); onClose(); }}>
           <img src="/Exit Work.png" alt="Close" style={{ width: "32px", height: "32px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: "0.8", transition: "transform 0.3s ease, opacity 0.3s ease" }} />
         </button>
@@ -77,11 +170,13 @@ const ImageLightbox = memo(({ images, currentIndex, onClose, onPrev, onNext, isM
         <button className="lightbox-premium-nav lightbox-premium-prev" onClick={onPrev} disabled={images.length <= 1}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
-        <div className={getCanvasClassName()}>
+        <div ref={canvasRef} className={`${getCanvasClassName()}${isVideo ? '' : ' has-image-zoom'}`} style={isVideo ? undefined : { cursor: dragging ? 'grabbing' : view.scale > 1 ? 'grab' : 'zoom-in' }} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerEnd} onPointerCancel={handlePointerEnd} onLostPointerCapture={handlePointerEnd} onDoubleClick={(e) => { if (!isVideo) zoomAt(viewRef.current.scale > 1 ? 1 : 2, e.clientX, e.clientY) }}>
           {isVideo ? (
             <video key={imageKeyRef.current} src={currentImage.src} autoPlay loop muted playsInline className={getImageClassName()} onLoadedData={() => setImageLoaded(true)} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           ) : (
-            <img key={imageKeyRef.current} src={currentImage.src} alt={currentCaption || `Image ${currentIndex + 1}`} className={getImageClassName()} onLoad={handleImageLoad} />
+            <div className="lightbox-premium-zoom-surface" style={{ transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})` }}>
+              <img key={imageKeyRef.current} src={currentImage.src} alt={currentCaption || `Image ${currentIndex + 1}`} className={getImageClassName()} onLoad={handleImageLoad} draggable={false} />
+            </div>
           )}
         </div>
         <button className="lightbox-premium-nav lightbox-premium-next" onClick={onNext} disabled={images.length <= 1}>
@@ -328,7 +423,7 @@ export default function App() {
   const projects = useMemo(() => [
     { id: 1, title: "NO DAYS OFF", category: "ENVIRONMENT / REAL-TIME", image: "/1.jpg", description: "Gameplay-driven coastal village environment focused on spatial readability, navigation flow, and in-engine performance validation.", extendedDescription: "Coastal stilt-village environment with gameplay-first approach.", fullDescription: "Coastal stilt-village environment designed with a gameplay-first approach. Focused on spatial readability, organic navigation, and functional layout. Each structure operates as a gameplay node, supporting exploration, cover, and interaction. Tested in-engine for scale, sightlines, LOD transitions, draw calls, and stable framerate performance.", tags: ["ENVIRONMENT", "LEVEL DESIGN", "REAL-TIME"], year: "2026", client: "Personal Project", role: "Environment Artist", software: ["Unreal Engine", "Blender"], has3DContent: true, techMetrics: { polyCount: "~850K tris", drawCalls: "45 avg", textureMemory: "2.1 GB", lodStrategy: "3 LOD levels per asset. LOD0 100%, LOD1 50%, LOD2 25% poly reduction. Billboard impostors for distant trees.", customShaders: "Custom vertex painting shader for cliff/rock blending. Distance-based detail normal fading. Optimized triplanar for terrain.", pipelineTools: "Blender, UE5, Substance Painter" }, additionalImages: [{ id: 1, src: "/anim.mp4", caption: "Coastal village - Animation preview" }, { id: 2, src: "/2.jpg", caption: "Coastal village overview" }, { id: 3, src: "/3.jpg", caption: "Gameplay node layout" }, { id: 4, src: "/4.jpg", caption: "In-engine performance test" }], videos: ["/mochila.webm"] },
     { id: 2, title: "COMMERCIAL KITCHEN", category: "ENVIRONMENT / REAL-TIME", image: "/5.jpg", description: "Industrial kitchen environment prepared for Unreal Engine with clean topology, PBR workflow, and optimized real-time performance.", extendedDescription: "Industrial Kitchen prepared for Unreal Engine.", fullDescription: "Industrial Kitchen prepared for Unreal Engine. Modeled with clean topology and optimized geometry, materials follow a PBR workflow. Lighting is configured for real-time playback and 360 walkthroughs.", tags: ["ENVIRONMENT", "PBR", "REAL-TIME", "KITCHEN"], year: "2025", client: "Spittia Solution", role: "Environment Artist", software: ["Unreal Engine", "Blender"], has3DContent: true, projectUrl: "https://bosco45.github.io/spittiaSolution/", techMetrics: { polyCount: "~420K tris", drawCalls: "32 avg", textureMemory: "1.8 GB", lodStrategy: "2 LOD levels for hero props. Automatic LOD generation via UE5. Combined static mesh actors.", customShaders: "PBR master material with roughness/metallic optimization. Light function for fake caustics.", pipelineTools: "Blender, UE5, Substance Painter" }, additionalImages: [{ id: 1, src: "/8.jpg", caption: "360 walkthrough view" }, { id: 2, src: "/7.jpg", caption: "Kitchen detail - Counter and appliances" }, { id: 3, src: "/6.jpg", caption: "Kitchen detail - Sink and storage" }] },
-    { id: 3, title: "ARCHITECTURAL RESIDENCE", category: "ENVIRONMENT / ARCHITECTURE", image: "/10.jpg", description: "High-end architectural environment developed entirely in Blender with premium residential aesthetic and cinematic composition.", extendedDescription: "A polished architectural environment built around strong silhouette language.", fullDescription: "High-end architectural environment developed entirely in Blender, with strong emphasis on visual clarity, material fidelity, and cinematic composition. Designed around strong silhouette language and clean spatial hierarchy.", tags: ["ARCHITECTURE", "BLENDER", "LIGHTING", "PBR"], year: "2025", client: "Personal Project", role: "3D Environment Artist", software: ["Blender"], has3DContent: false, techMetrics: { polyCount: "~680K tris", drawCalls: "N/A (offline)", textureMemory: "3.2 GB", lodStrategy: "Not applicable (offline render). Scene organized in render layers for compositing.", customShaders: "Custom architectural glass shader with dual-layer refraction. Procedural weathering node group.", pipelineTools: "Blender, Cycles, Photoshop" }, additionalImages: [{ id: 1, src: "/12.jpg", caption: "Material detail - Wood and stone textures" }, { id: 2, src: "/11.jpg", caption: "Exterior view - Premium residential aesthetic" }] },
+    { id: 3, title: "ARCHITECTURAL RESIDENCE", category: "ENVIRONMENT / ARCHITECTURE", image: "/casa-principal.png?v=2", description: "Stylized environment inspired by a handcrafted cardboard and paper diorama.", extendedDescription: "Stylized environment inspired by a handcrafted cardboard and paper diorama.", fullDescription: "CASA is a stylized 3D environment built around a handcrafted cardboard and paper aesthetic. The scene combines a neighborhood house and ice cream shop with surrounding buildings, layered mountains, vegetation, a waterfall, and small decorative props. The project explores modeling, texturing, lighting, and composition, with close attention to corrugated edges, painted surfaces, and small details that reinforce the miniature appearance. Completed over two weeks, the full environment contains 125,691 vertices and 100,181 faces, equivalent to 204,099 triangles before modifiers and 207,091 triangles with viewport modifiers.", offlineRender: true, tags: ["ARCHITECTURE", "BLENDER", "LIGHTING", "PBR"], year: "2026", client: "Personal Project", role: "3D Environment Artist", software: ["Blender"], has3DContent: false, techMetrics: { polyCount: "207,091 tris", drawCalls: "N/A (offline)", textureMemory: "Not measured", lodStrategy: "Offline render. Full environment: 125,691 vertices, 100,181 faces and 204,099 triangles before modifiers; 207,091 triangles with viewport modifiers. No LOD system has been validated.", pipelineTools: "Blender, Cycles, Substance 3D Painter" }, additionalImages: [{"id": 13, "src": "/casa-gallery/01_Blockout_Idea.png", "caption": "Blockout / Idea"}, {"src": "/casa-gallery/Antes.png", "caption": "Before", "id": 2}, {"src": "/casa-gallery/06_Despiece_Modular.png", "caption": "Exploded view", "id": 7}, {"src": "/casa-gallery/Wireframe4 original.png", "caption": "Wireframe", "id": 1}, {"id": 12, "src": "/casa-gallery/08_Materials.png?v=4", "caption": "Materials"}, {"id": 10, "src": "/casa-lighting/02_Key_Light.png?v=2", "caption": "Key light"}, {"src": "/casa-gallery/detalle4.png", "caption": "Detail 4", "id": 3}, {"src": "/casa-gallery/detalle3.png", "caption": "Detail 3", "id": 4}, {"src": "/casa-gallery/detalle2.png", "caption": "Detail 2", "id": 5}, {"src": "/casa-gallery/detalle1.png", "caption": "Detail 1", "id": 6}] },
     { id: 4, title: "ORNAMENTAL", category: "ENVIRONMENT / LIGHTING", image: "/20.jpg", description: "Cinematic lighting study focused on a traditional street lamp within a rain-soaked urban scene.", extendedDescription: "A focused environment study built around a traditional street lamp.", fullDescription: "Cinematic lighting study built around a traditional street lamp as the main focal point within a rain-soaked urban scene. Special attention to wet surfaces, reflections, and material response under low-light conditions.", tags: ["ENVIRONMENT", "LIGHTING", "MOOD", "ATMOSPHERIC"], year: "2024", client: "IMPORLED", role: "Environment Artist", software: [], has3DContent: false, techMetrics: { polyCount: "~180K tris", drawCalls: "N/A (offline)", textureMemory: "1.1 GB", lodStrategy: "Not applicable (offline render).", customShaders: "Custom rain droplet shader. Animated wetness map with time-based drying simulation.", pipelineTools: "Blender, Cycles, Substance Painter" }, additionalImages: [{ id: 1, src: "/21.jpg", caption: "Secondary environment angle" }, { id: 2, src: "/22.jpg", caption: "Material and atmosphere detail" }] }
   ], [])
 
@@ -559,28 +654,30 @@ styleSheet.textContent = `
   .rd-impact-badge { font-size: 9px; font-weight: 500; letter-spacing: 0.06em; color: #5e9cfa; background: rgba(94,156,250,0.08); padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(94,156,250,0.15); }
   .rd-card-title { font-size: 15px; font-weight: 600; letter-spacing: 0.03em; color: #e8e4d8; margin: 0 0 8px 0; }
   .rd-card-desc { font-size: 11px; font-weight: 400; line-height: 1.6; color: #8a9bb5; margin: 0; }
-  .lightbox-premium-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(6,9,15,0.97); backdrop-filter: blur(36px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: zoom-out; animation: fadeIn 0.35s; }
+  .lightbox-premium-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh; background: rgba(6,9,15,0.97); backdrop-filter: blur(36px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: zoom-out; animation: fadeIn 0.35s; }
   .lightbox-premium-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: radial-gradient(ellipse at center, rgba(94,156,250,0.03) 0%, transparent 70%); }
   .lightbox-premium-header { position: fixed; top: 0; left: 0; right: 0; padding: 26px 38px; display: flex; justify-content: space-between; align-items: center; z-index: 1002; background: linear-gradient(to bottom, rgba(6,9,15,0.65), transparent); pointer-events: none; }
   .lightbox-premium-header > * { pointer-events: auto; }
   .lightbox-premium-counter { font-size: 10px; font-weight: 400; color: #6b7d95; letter-spacing: 0.12em; padding: 5px 14px; background: rgba(13,19,33,0.45); border-radius: 20px; border: 1px solid rgba(107,125,149,0.08); backdrop-filter: blur(12px); }
   .lightbox-premium-close { width: 38px; height: 38px; border-radius: 50%; background: transparent; border: none; color: #c8d4e4; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.25s; opacity: 0.65; }
   .lightbox-premium-close:hover { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 14px rgba(255,255,255,0.5)); }
-  .lightbox-premium-main { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 72px 96px 76px; z-index: 1001; }
-  .lightbox-premium-canvas { display: inline-flex; align-items: center; justify-content: center; background: transparent; border-radius: 12px; transition: all 0.5s; }
-  .canvas-orientation-landscape { max-width: 80vw; max-height: 74vh; padding: 10px; }
-  .canvas-orientation-wide { max-width: 82vw; max-height: 70vh; padding: 8px; }
-  .canvas-orientation-square { max-width: min(72vw, 860px); max-height: 74vh; padding: 12px; }
-  .canvas-orientation-portrait { max-width: 62vw; max-height: 74vh; padding: 14px; }
+  .lightbox-premium-main { box-sizing: border-box; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; padding: 72px clamp(52px, 7.5vw, 96px) 76px; z-index: 1001; }
+  .lightbox-premium-canvas { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; background: transparent; border-radius: 12px; transition: all 0.5s; }
   .lightbox-premium-canvas video { max-width: 80vw !important; max-height: 75vh !important; width: auto !important; height: auto !important; }
+  .lightbox-premium-canvas.has-image-zoom { overflow: hidden; touch-action: none; padding: 0; }
+  .lightbox-premium-zoom-surface { display: flex; align-items: center; justify-content: center; flex: 0 0 100%; width: 100%; height: 100%; min-width: 0; min-height: 0; transform-origin: center; pointer-events: none; user-select: none; }
+  .lightbox-premium-zoom-controls { display: flex; align-items: center; gap: 2px; padding: 2px; border: 1px solid rgba(107,125,149,0.2); border-radius: 20px; background: rgba(13,19,33,0.65); }
+  .lightbox-premium-zoom-controls button { min-width: 30px; height: 30px; padding: 0 6px; border: none; border-radius: 16px; background: transparent; color: #c8d4e4; font: inherit; font-size: 12px; cursor: pointer; touch-action: manipulation; }
+  .lightbox-premium-zoom-controls button:hover { background: rgba(94,156,250,0.15); }
+  .lightbox-premium-zoom-controls button:disabled { opacity: 0.35; cursor: default; }
   .lightbox-premium-img { display: block; transition: opacity 0.5s, transform 0.5s, filter 0.5s; width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
   .img-transitioning { opacity: 0; transform: scale(0.97); filter: blur(8px); }
   .img-loaded { opacity: 1; transform: scale(1); filter: blur(0); animation: imageFadeIn 0.5s; }
   .lightbox-premium-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(13,19,33,0.45); border: 1px solid rgba(255,255,255,0.08); color: #c8d4e4; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.25s; opacity: 0.45; z-index: 1003; backdrop-filter: blur(10px); }
   .lightbox-premium-nav:hover:not(:disabled) { opacity: 1; background: rgba(13,19,33,0.8); border-color: rgba(255,255,255,0.22); transform: translateY(-50%) scale(1.1); }
   .lightbox-premium-nav:disabled { opacity: 0; visibility: hidden; }
-  .lightbox-premium-prev { left: 32px; }
-  .lightbox-premium-next { right: 32px; }
+  .lightbox-premium-prev { left: clamp(4px, 2.5vw, 32px); }
+  .lightbox-premium-next { right: clamp(4px, 2.5vw, 32px); }
   .lightbox-premium-caption { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 8px 24px; background: rgba(8,13,22,0.75); backdrop-filter: blur(18px); border-radius: 28px; border: 1px solid rgba(255,255,255,0.06); font-size: 11px; font-weight: 400; color: #8a9bb5; letter-spacing: 0.05em; z-index: 1002; white-space: nowrap; max-width: 80vw; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.45s, transform 0.45s; }
   .caption-transitioning { opacity: 0; transform: translateX(-50%) translateY(10px); }
   @media (max-width: 1200px) { .identity-panel { flex: 0 0 300px; padding: 45px 20px 45px 40px; } .projects-track { padding: 65px 80px 80px 55px; } .project-layout { flex-direction: column; overflow-y: auto; } .project-gallery { flex: none; height: auto; padding: 80px 30px 30px 30px; } .project-info { flex: none; height: auto; padding: 0 30px 60px 30px; animation: slideUp 0.6s 0.2s both; } }
